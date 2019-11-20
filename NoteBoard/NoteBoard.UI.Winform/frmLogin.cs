@@ -19,7 +19,7 @@ namespace NoteBoard.UI.Winform
         public frmLogin()
         {
             InitializeComponent();
-            _userController = new UserController();
+            
         }
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -32,12 +32,14 @@ namespace NoteBoard.UI.Winform
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            _userController = new UserController();
+
             User currentUser = _userController.GetByLogin(txtKAdi.Text, txtSifre.Text);
             if (currentUser != null)
             {
                 if (currentUser.UserRole == UserRole.Standart)
                 {
-                    frmMain frm = new frmMain();
+                    frmMain frm = new frmMain(currentUser);
                     frm.Owner = this;
                     frm.Show();
                     this.Hide();

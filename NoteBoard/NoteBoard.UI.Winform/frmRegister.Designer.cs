@@ -156,6 +156,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRegister";
             this.Text = "frmRegister";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmRegister_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

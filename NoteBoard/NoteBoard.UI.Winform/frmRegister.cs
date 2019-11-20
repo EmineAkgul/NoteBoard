@@ -46,7 +46,7 @@ namespace NoteBoard.UI.Winform
                 {
                     MessageBox.Show("Kayıt Başarılı. Kullanıcı onay süreciniz başladı.");
                     this.Close();
-                    this.Owner.Show();
+                    
                 }
             }
             catch (Exception ex)
@@ -54,6 +54,11 @@ namespace NoteBoard.UI.Winform
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void FrmRegister_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Owner.Show();
         }
     }
 }
