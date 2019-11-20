@@ -17,7 +17,7 @@ namespace NoteBoard.BLL
             _passwordDAL = new PasswordDAL();
         }
 
-        public bool Add(Password password)
+        public bool Add(Password password) 
         {
             List<Password> passwords = GetAllByUser(password.UserID);
             passwords = passwords.OrderByDescending(a => a.CreatedDate).Take(3).ToList();
